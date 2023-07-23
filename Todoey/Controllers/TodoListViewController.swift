@@ -18,6 +18,10 @@ class TodoListViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Item.plist")
+        
+        print(dataFilePath)
+        
         let newItem = Item()
         newItem.title = "Find Mike"
         itemArray.append(newItem)
@@ -35,7 +39,7 @@ class TodoListViewController: UITableViewController {
         }
         
     }
-
+    
 
     //MARK: - TableView DataSource Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
